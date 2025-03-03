@@ -18,9 +18,37 @@ body {
 }
 
 
-h1, p {
+h1, p, h2 {
     font-family:Arial;
     text-align: center;
+}
+
+h2 {
+    color: white;
+}
+
+h2 img {
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.language {
+    display: flex;
+    align-items: center; /* Aligns the items vertically in the center */
+    gap: 10px; /* Adds spacing between the image and text */
+    font-size: 24px;
+    color: white;
+}
+
+.languages {
+    margin-left: 20%;
+    margin-right: 25%;
+    margin-top: 0
+}
+
+.language img {
+    width: 40px; /* Adjust image size if necessary */
+    height: 40px;
 }
 
 h1 {
@@ -59,23 +87,23 @@ h1 {
     background: linear-gradient(to right, #fedeff, #fca6ff);
     height: 2px;
     width: 25%;
-    min-width: 300px;
+    min-width: 150px;
 }
 
 .modern-button {
     border-radius: 8px;
     cursor: pointer;
-    background-color: #cccccc;
+    background-color: #f3f3f3;
     margin-top: 5px;
     margin-bottom: 5px;
     font-weight: bolder; 
     height: 35px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .modern-button:hover {
-    background-color: rgb(170, 170, 170);
+    background-color: rgb(201, 201, 201);
     transform: scale(1.05);
     box-shadow: 0 4px 10px 4gba(0, 0, 0, 0.2);
     border-color: #fb87ff;
@@ -93,6 +121,49 @@ h1 {
 
 .profile {
     margin: auto;
+}
+
+.container {
+    background-color: rgba(34, 34, 87, 0.5);
+    backdrop-filter: blur(10px);
+    height: 450px;
+    width: 20%;
+    min-width: 250px;
+    border: 3px solid #31313194;
+    border-radius: 8px;
+    background-image: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.05);
+    border: 3px solid #fb87ff94;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2%;
+    background-image: url(resources/pycraftbackground.png);
+
+}
+
+.github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 125px;
+    background-color: rgb(172, 172, 172)
+}
+
+.flex-div {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 25px;
 }
 
 .right-align {

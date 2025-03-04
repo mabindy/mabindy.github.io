@@ -1,10 +1,25 @@
 body {
-    background: linear-gradient(to right, rgb(58, 58, 58), rgb(118, 103, 128));
+    background: linear-gradient(to right, rgb(110, 53, 133), rgb(83, 108, 136));
     opacity: 0;
     filter: blur(5px);
-    animation: blurIn 0.5s ease-in-out forwards;
+    transition: filter 0.15s ease, opacity 0.15s ease;
+    font-family: Arial;
 }
 
+body.loaded {
+    filter: blur(0);
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+.blur-out {
+    filter: blur(5px);
+    opacity: 0;
+    transition: filter 0.5s ease, opacity 0.5s ease;
+}  
 
 @keyframes blurIn {
     from {
@@ -18,8 +33,8 @@ body {
 }
 
 
+
 h1, p, h2 {
-    font-family:Arial;
     text-align: center;
 }
 
@@ -30,6 +45,26 @@ h2 {
 h2 img {
     vertical-align: middle;
     margin-right: 20px;
+}
+
+figcaption {
+    color: white;
+    font-weight: bolder;
+}
+
+.img-round {
+    border-radius: 8px;
+    border: 3px solid #31313194
+}
+
+.hoverable {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, filter 0.3s ease, opacity 0.3s ease, background-position 0s;
+}
+
+.hoverable:hover {
+    transform: scale(1.05);
+    border: 3px solid #fb87ff94;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .language {
@@ -92,14 +127,16 @@ h1 {
 
 .modern-button {
     border-radius: 8px;
+    border: 2px solid black;
     cursor: pointer;
     background-color: #f3f3f3;
+    opacity: 0.5;
     margin-top: 5px;
     margin-bottom: 5px;
     font-weight: bolder; 
     height: 35px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
 }
 
 .modern-button:hover {
@@ -107,10 +144,12 @@ h1 {
     transform: scale(1.05);
     box-shadow: 0 4px 10px 4gba(0, 0, 0, 0.2);
     border-color: #fb87ff;
+    opacity: 1;
 }
 
 .selected {
     background-color: rgb(170, 170, 170);
+    opacity: 0.8;
 }
 
 .logo-button {
@@ -126,13 +165,30 @@ h1 {
 .container {
     background-color: rgba(34, 34, 87, 0.5);
     backdrop-filter: blur(10px);
+    text-align: center;
     height: 450px;
     width: 20%;
     min-width: 250px;
     border: 3px solid #31313194;
     border-radius: 8px;
     background-image: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, filter 0.3s ease, opacity 0.3s ease, background-position 0s;
+}
+
+.wide {
+    width: 40%;
+    min-width: 500px;
+    height: 550px;
+}
+
+.row-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 15%;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .container:hover {
@@ -147,7 +203,29 @@ h1 {
     align-items: center;
     gap: 2%;
     background-image: url(resources/pycraftbackground.png);
+    background-repeat: repeat;
+}
 
+.game:hover {
+    background-position: right bottom;
+    animation: infiniteDiagonal 15s linear infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+}
+
+@keyframes infiniteDiagonal {
+    from {
+      background-position: 0% 0%;
+    }
+    to {
+      background-position: 100% 100%;
+    }
+  }
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2%;
 }
 
 .github {
@@ -157,6 +235,11 @@ h1 {
     margin: auto;
     width: 125px;
     background-color: rgb(172, 172, 172)
+}
+
+.container-button {
+    margin: auto;
+    width: 125px;
 }
 
 .flex-div {

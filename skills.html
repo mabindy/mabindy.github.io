@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mabindy</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 <header>
@@ -47,6 +48,9 @@
                 <h2 class="language"><img src="resources/HTML5logo.png" alt="HTML5 Logo" width="40" height="40">HTML</h2>
                 <h2 class="language"><img src="resources/CSSlogo.png" alt="CSS Logo" width="40" height="40">CSS</h2>
                 <h2 class="language"><img src="resources/cslogo.png" alt="C# Logo" width="40" height="40">C#</h2>
+                <button class="modern-button container-button" onclick="showCertificates()">
+                    Certificates
+                </button>
             </div>
         </div>
         <div class="container">
@@ -58,6 +62,29 @@
                 <h2 class="language"><img src="resources/github-mark.png" alt="Github Logo" width="40" height="40">Github</h2>
                 <h2 class="language"><img src="resources/photoshoplogo.png" alt="Photoshop Logo" width="40" height="40">Photoshop</h2>
             </div>
+        </div>
+        <div class="container wide hidden">
+            <h2>Certificates</h2>
+            <div class="divider-line"></div>
+            <div class="row-div">
+                <figure style="text-align: center;">
+                    <img class="img-round hoverable" src="resources/pythoncert.png" alt="Python Certification" width="200">
+                    <figcaption>Python</figcaption>
+                </figure>
+                <figure style="text-align: center;">
+                    <img class="img-round hoverable" src="resources/htmlcsscert.png" alt="HTML and CSS Certification" width="200">
+                    <figcaption>HTML / CSS</figcaption>
+                </figure>
+            </div>
+            <div class="row-div">
+                <figure style="text-align: center;">
+                    <img class="img-round hoverable" src="resources/cscert.png" alt="C# Certification" width="200">
+                    <figcaption>C#</figcaption>
+                </figure>
+            </div>
+            <button class="modern-button container-button" onclick="hideCertificates()">
+                Back
+            </button>
         </div>
     </div>
 

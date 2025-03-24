@@ -48,6 +48,7 @@
                 <h2 class="language"><img src="resources/HTML5logo.png" alt="HTML5 Logo" width="40" height="40">HTML</h2>
                 <h2 class="language"><img src="resources/CSSlogo.png" alt="CSS Logo" width="40" height="40">CSS</h2>
                 <h2 class="language"><img src="resources/cslogo.png" alt="C# Logo" width="40" height="40">C#</h2>
+                <h2 class="language"><img src="resources/sqllogo.png" alt="C# Logo" width="40" height="40">SQL</h2>
                 <button class="modern-button container-button" onclick="showCertificates()">
                     Certificates
                 </button>
@@ -81,12 +82,20 @@
                     <img class="img-round hoverable" src="resources/cscert.png" alt="C# Certification" width="200">
                     <figcaption>C#</figcaption>
                 </figure>
+                <figure style="text-align: center;">
+                    <img class="img-round hoverable" src="resources/databasescert.png" alt="Databases Certification" width="200">
+                    <figcaption>SQL/Databases</figcaption>
+                </figure>
             </div>
             <button class="modern-button container-button" onclick="hideCertificates()">
                 Back
             </button>
         </div>
     </div>
-
+    <div id="image-modal" class="modal hidden">
+        <div class="modal-content">
+            <img id="modal-img" src="" alt="Enlarged Certificate">
+        </div>
+    </div>      
 </body>
 </html>

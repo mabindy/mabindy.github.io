@@ -47,6 +47,61 @@ h2 img {
     margin-right: 20px;
 }
 
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    cursor: zoom-out;
+    opacity: 0;
+    filter: blur(5px);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+    pointer-events: none;
+}
+
+.modal.show {
+    opacity: 1;
+    filter: blur(0);
+    pointer-events: auto;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px black;
+    border: 5px solid black;
+    cursor: default;
+}
+
+#modal-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 90vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+
 figcaption {
     color: white;
     font-weight: bolder;
@@ -166,7 +221,7 @@ h1 {
     background-color: rgba(34, 34, 87, 0.5);
     backdrop-filter: blur(10px);
     text-align: center;
-    height: 450px;
+    height: auto;
     width: 20%;
     min-width: 250px;
     border: 3px solid #31313194;

@@ -66,6 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Attach click listeners to all internal links
   document.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', function(e) {
+
+      if (link.hasAttribute('download')) {
+        return; // Let the browser handle it normally
+      }
       // Get the destination URL
       const targetUrl = this.getAttribute('href');
       
@@ -81,4 +85,39 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 150); // 500ms delay matches the CSS transition duration
     });
   });
+  // Modal image viewer for certificates
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-img');
+  const closeModal = document.getElementById('modal-close');
+
+  // When any certification image is clicked
+  document.querySelectorAll('.container.wide img').forEach(img => {
+      img.addEventListener('click', () => {
+          modalImg.src = img.src;
+          modal.classList.remove('hidden');
+          setTimeout(() => {
+            modal.classList.add('show');
+          }, 10);
+      });
+  });
+
+  // Click to close (anywhere outside the image or on the close button)
+  modal.addEventListener('click', () => {
+      modal.classList.remove('show');
+      setTimeout(() => {
+          modal.classList.add('hidden');
+      }, 300); // Match transition duration
+    
+  });
+
+  closeModal.addEventListener('click', () => {
+      modal.classList.remove('show');
+      setTimeout(() => {
+          modal.classList.add('hidden');
+      }, 300); // Match transition duration
+    
+  });
+});
+
   

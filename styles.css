@@ -39,7 +39,9 @@ body.loaded {
     }
 }
 
-
+header {
+    padding-top: 5px;
+}
 
 h1, p, h2 {
     text-align: center;
@@ -167,16 +169,41 @@ h1 {
 
 
 .top-bar {
-    background: linear-gradient(to right, #916f99, #5c5db3);
+    background: linear-gradient(to right, #916f9985, #5c5db388);
     border-radius: 0px;
     display: flex;
     gap:5%;
+    border: 3px solid #31313194;
     padding-left: 5px;
-    border-radius: 8px;
-    min-width: 500px;
+    border-radius: 10px;
+    min-width: 600px;
     margin: auto;
-    justify-content: center;
+    width: 55%;
+    justify-content: space-between;
+    align-items: center;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    transition: width 0.5s ease, border-color 0.3s ease;
+}
+
+.top-bar h4 {
+    color:rgb(224, 224, 224); 
+    margin: 0 10px 0 10px;
+    min-width: 75px;
+}
+
+.top-bar:hover {
+    width: 60%;
+    border-color: #fb87ff94;
+}
+
+.fade-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.fade-item.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .divider-line {
@@ -236,6 +263,7 @@ h1 {
     background-image: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, filter 0.3s ease, opacity 0.3s ease, background-position 0s;
 }
+
 
 .wide {
     width: 40%;

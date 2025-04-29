@@ -85,6 +85,37 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 150); // 500ms delay matches the CSS transition duration
     });
   });
+
+  function staggerIn(selector, delay = 100) {
+    document.querySelectorAll(selector).forEach((el, i) => {
+      // clear any previous state
+      el.classList.remove('visible');
+      setTimeout(() => {
+        el.classList.add('visible');
+      }, delay * i);
+    });
+  }
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    // your existing fade-in
+    setTimeout(() => {
+      document.body.classList.add('loaded');
+      // **then** stagger in all .fade-item
+      staggerIn('.fade-item', 150);
+    }, 50);
+  });
+  
+  // on navigation: remove the visible classes so next page can re-stagger
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', e => {
+      if (link.hasAttribute('download')) return;
+      e.preventDefault();
+      document.body.classList.remove('loaded');
+      document.querySelectorAll('.fade-item').forEach(el => el.classList.remove('visible'));
+      setTimeout(() => window.location.href = link.href, 150);
+    });
+  });
+  
   // Modal image viewer for certificates
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('image-modal');
@@ -230,3 +261,37 @@ particlesJS("particles-js", {
   },
   "retina_detect": true
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const timeEl = document.getElementById('time-label');
+    const dateEl = document.getElementById('date-label');
+  
+    function updateTime() {
+      const now = new Date();
+      // 12-hour clock with AM/PM
+      timeEl.textContent = now.toLocaleTimeString('en-US', {
+        hour:   'numeric',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      });
+    }
+  
+    function updateDate() {
+      const today = new Date();
+      // M/D/YYYY format
+      dateEl.textContent = today.toLocaleDateString('en-US', {
+        month: 'numeric',
+        day:   'numeric',
+        year:  'numeric'
+      });
+    }
+  
+    // run once immediately…
+    updateTime();
+    updateDate();
+    // …then keep them fresh
+    setInterval(updateTime, 1000);
+    setInterval(updateDate, 60 * 1000);
+  });
+  

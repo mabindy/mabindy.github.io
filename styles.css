@@ -139,6 +139,14 @@ figcaption {
     color: white;
 }
 
+.medium-font {
+    font-size: 17px;
+}
+
+.small-font {
+    font-size: 13px;
+}
+
 .languages {
     margin-left: 20%;
     margin-right: 25%;
@@ -388,5 +396,19 @@ html, body {
     background: transparent;
 }
 
+.corner-label {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 12px;
+    color: #777;
+    z-index: 1000;
+  }
+
+.itchio {
+    background-image: url('resources/itch-io-download.png');
+    background-size: cover;
+    background-position: center;
+}
 
 

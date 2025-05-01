@@ -265,6 +265,10 @@ h1 {
 }
 
 
+.container.game {
+    padding-bottom: 10px;
+}
+
 .wide {
     width: 40%;
     min-width: 500px;
@@ -279,6 +283,20 @@ h1 {
     gap: 15%;
     width: 100%;
     margin-top: 10px;
+}
+
+.column-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.half-width {
+    width: 25%;
 }
 
 .container:hover {
@@ -332,6 +350,15 @@ h1 {
     width: 125px;
 }
 
+.big-button {
+    width: 200px;
+    height: 50px;
+}
+
+.big-button p {
+    color: rgb(255, 255, 255);
+}
+
 .flex-div {
     display: flex;
     justify-content: center;
@@ -360,3 +387,6 @@ html, body {
     z-index: -1;
     background: transparent;
 }
+
+
+
